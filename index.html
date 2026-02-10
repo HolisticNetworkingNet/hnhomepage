@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Thomas Belknap — Senior Software Engineer & Technical Lead. Modernizing mission-critical public service systems." />
+  <title>Thomas Belknap | HolisticNetworking.net</title>
+
+  <!-- Optional: nice font. Remove if you want zero external deps. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,.06);
+      --panel-2: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --faint: rgba(255,255,255,.48);
+      --line: rgba(255,255,255,.14);
+      --accent: #8ae6ff;
+      --accent-2: #b4ffb4;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1000px 600px at 10% 15%, rgba(138,230,255,.18), transparent 60%),
+        radial-gradient(900px 700px at 90% 30%, rgba(180,255,180,.12), transparent 60%),
+        radial-gradient(1200px 900px at 60% 100%, rgba(140,120,255,.10), transparent 55%),
+        linear-gradient(180deg, #070b14 0%, var(--bg) 60%, #050815 100%);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid rgba(138,230,255,.75);
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+
+    .skip {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      background: #fff;
+      color: #000;
+      padding: 10px 12px;
+      border-radius: 10px;
+      z-index: 999;
+    }
+    .skip:focus { left: 12px; }
+
+    header{
+      padding: 44px 20px 20px;
+    }
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .topbar{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      backdrop-filter: blur(10px);
+    }
+
+    .brand{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .mark{
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background:
+        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.85), rgba(255,255,255,0)),
+        linear-gradient(135deg, rgba(138,230,255,.85), rgba(180,255,180,.70));
+      box-shadow: 0 10px 24px rgba(138,230,255,.18);
+      border: 1px solid rgba(255,255,255,.18);
+      flex: 0 0 auto;
+    }
+    .brandtext{
+      display: grid;
+      gap: 1px;
+      min-width: 0;
+    }
+    .brandtext strong{
+      font-size: 14px;
+      letter-spacing: .2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .brandtext span{
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    nav{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.12);
+      text-decoration: none;
+      color: var(--text);
+      font-size: 13px;
+      transition: transform .14s ease, background .14s ease, border-color .14s ease;
+    }
+    .pill:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.20);
+    }
+
+    main{ padding: 10px 20px 64px; }
+
+    .hero{
+      margin-top: 22px;
+      padding: 34px 26px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(380px 240px at 15% 10%, rgba(138,230,255,.15), transparent 60%),
+        radial-gradient(360px 260px at 85% 20%, rgba(180,255,180,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .hero > * { position: relative; }
+
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+    .subtitle{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 70ch;
+    }
+
+    .cta{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: transform .14s ease, background .14s ease, border-color .14s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.09);
+      border-color: rgba(255,255,255,.26);
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(138,230,255,.32), rgba(180,255,180,.22));
+      border-color: rgba(255,255,255,.26);
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 860px){
+      .grid{ grid-template-columns: 1fr; }
+      nav{ justify-content: flex-start; }
+      .topbar{ border-radius: 18px; }
+    }
+
+    .card{
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 18px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.25);
+      backdrop-filter: blur(10px);
+    }
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .card p{
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .tag{
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.80);
+      font-size: 12px;
+    }
+
+    .list{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .list li{ margin: 8px 0; }
+
+    .footer{
+      margin-top: 18px;
+      color: var(--faint);
+      font-size: 12px;
+      display:flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 14px;
+    }
+
+    /* Small accessibility/UX touches */
+    @media (prefers-reduced-motion: reduce){
+      .pill, .btn { transition: none; }
+      .pill:hover, .btn:hover { transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header>
+    <div class="wrap">
+      <div class="topbar" role="navigation" aria-label="Primary">
+        <div class="brand">
+          <div class="mark" aria-hidden="true"></div>
+          <div class="brandtext">
+            <strong>HolisticNetworking.net</strong>
+            <span>Professional home for Thomas Belknap</span>
+          </div>
+        </div>
+
+        <nav aria-label="Links">
+          <a class="pill" href="https://www.linkedin.com/in/thomasbelknap/" rel="me">LinkedIn</a>
+          <a class="pill" href="#" id="githubLink">GitHub</a>
+          <a class="pill" href="mailto:tbelknap@holisticnetworking.net">Email</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <section class="hero" aria-label="Intro">
+        <h1>Thomas Belknap</h1>
+        <p class="subtitle">
+          Senior Software Engineer &amp; Technical Lead modernizing mission-critical systems for public service,
+          higher education, and enterprise teams — with an emphasis on reliability, accessibility, and long-term maintainability.
+        </p>
+
+        <div class="cta" aria-label="Primary actions">
+          <a class="btn primary" href="mailto:tbelknap@holisticnetworking.net">Contact</a>
+          <a class="btn" href="https://www.linkedin.com/in/thomasbelknap/">View LinkedIn</a>
+        </div>
+      </section>
+
+      <section class="grid" aria-label="Details">
+        <article class="card">
+          <h2>What I do</h2>
+          <p>
+            I build and modernize web platforms that need to be correct, understandable, and durable.
+            That includes legacy modernization, platform stewardship, and pragmatic automation — with
+            a bias toward clean architecture, clear documentation, and measurable operational outcomes.
+          </p>
+
+          <h2 style="margin-top:14px;">Where I’ve worked</h2>
+          <ul class="list">
+            <li>NOAA — mission-critical public systems</li>
+            <li>Cornell University (Biotechnology) — research support platforms</li>
+            <li>CDC — public health publishing and reliability</li>
+          </ul>
+
+          <ul class="tags" aria-label="Core strengths">
+            <li class="tag">Python / Django</li>
+            <li class="tag">PHP (Symfony, CakePHP, Laravel)</li>
+            <li class="tag">AWS / Cloud</li>
+            <li class="tag">APIs &amp; Integrations</li>
+            <li class="tag">Accessibility / WCAG</li>
+            <li class="tag">Data-driven systems</li>
+          </ul>
+        </article>
+
+        <aside class="card">
+          <h2>Now</h2>
+          <p>
+            I’m keeping this site intentionally simple and stable.
+            My current professional profile and contact details live on LinkedIn.
+          </p>
+
+          <h2 style="margin-top:14px;">We Build Reactions</h2>
+          <p>
+            I also run We Build Reactions — a Rochester-based studio applying the same principles
+            (clarity, structure, accessibility) to smaller teams and creative projects.
+          </p>
+
+          <h2 style="margin-top:14px;">Writing</h2>
+          <p>
+            I plan to publish periodic posts again. When that’s live, this page will link to it —
+            likely via Medium or a lightweight blog.
+          </p>
+
+          <div class="cta" style="margin-top: 10px;">
+            <a class="btn" href="mailto:tbelknap@holisticnetworking.net">Say hello</a>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="footer" aria-label="Footer">
+        <span>© <span id="year"></span> Thomas Belknap</span>
+        <span>Built for speed, clarity, and accessibility.</span>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    // Small enhancements, safe to remove.
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // TODO: Put your actual GitHub profile URL here.
+    // Keeping as a placeholder so you can paste once and forget.
+    const githubUrl = "https://github.com/YOUR_GITHUB_USERNAME";
+    const gh = document.getElementById("githubLink");
+    gh.href = githubUrl;
+  </script>
+</body>
+</html>
