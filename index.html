@@ -6,55 +6,55 @@
   <meta name="description" content="Thomas Belknap — Senior Software Engineer & Technical Lead. Modernizing mission-critical public service systems." />
   <title>Thomas Belknap | HolisticNetworking.net</title>
 
-  <!-- Optional: nice font. Remove if you want zero external deps. -->
+  <!-- Optional font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-  /* HolisticNetworking palette (from logo) */
-  --hn-green: #7BBD42;
-  --hn-green-2: #7DBE45;
-  --hn-blue: #11566C;
-  --hn-blue-dark: #003953;
+      /* HolisticNetworking palette */
+      --hn-green: #7BBD42;
+      --hn-green-2: #7DBE45;
+      --hn-blue: #11566C;
+      --hn-blue-dark: #003953;
 
-  /* Light theme tokens */
-  --bg: #f7faf6;
-  --panel: rgba(0,0,0,.03);
-  --panel-2: rgba(0,0,0,.05);
-  --text: rgba(0,0,0,.86);
-  --muted: rgba(0,0,0,.62);
-  --faint: rgba(0,0,0,.45);
-  --line: rgba(0,0,0,.10);
+      /* Light theme */
+      --bg: #f7faf6;
+      --text: rgba(0,0,0,.86);
+      --muted: rgba(0,0,0,.62);
+      --faint: rgba(0,0,0,.45);
+      --line: rgba(0,0,0,.10);
 
-  --accent: var(--hn-green);
-  --accent-2: var(--hn-blue);
+      --shadow: 0 18px 60px rgba(0,0,0,.10);
+      --radius: 18px;
+      --max: 980px;
+    }
 
-  --shadow: 0 18px 60px rgba(0,0,0,.10);
-  --radius: 18px;
-  --max: 980px;
-}
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
 
-* { box-sizing: border-box; }
-html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.55;
+    }
 
-body{
-  margin: 0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.55;
-}
+    /* Headings use brand teal */
+    h1, h2{
+      color: var(--hn-blue);
+    }
 
     a { color: inherit; }
     a:focus-visible, button:focus-visible {
-      outline: 3px solid rgba(123, 189, 66, .75); /* hn-green */
+      outline: 3px solid rgba(123,189,66,.75);
       outline-offset: 3px;
       border-radius: 10px;
     }
 
-    .skip {
+    .skip{
       position: absolute;
       left: -999px;
       top: 12px;
@@ -64,47 +64,45 @@ body{
       border-radius: 10px;
       z-index: 999;
     }
-    .skip:focus { left: 12px; }
+    .skip:focus{ left: 12px; }
 
-    header{
-      padding: 44px 20px 20px;
-    }
+    header{ padding: 44px 20px 20px; }
+
     .wrap{
       max-width: var(--max);
       margin: 0 auto;
     }
 
+    /* Top bar */
     .topbar{
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
       padding: 14px 16px;
-      background: rgba(255,255,255,.05);
+      background: #fff;
       border: 1px solid var(--line);
       border-radius: 999px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
     }
 
     .brand{
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       min-width: 0;
     }
 
-    /* Mark updated to match logo palette (blue + green), no neon glow */
-    .mark{
-      width: 34px;
-      height: 34px;
+    .logo{
+      display: block;
+      width: 44px;
+      height: auto;
+      max-height: 34px;
+      object-fit: contain;
+      background: #fff;
+      padding: 4px;
       border-radius: 10px;
-      background:
-        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.70), rgba(255,255,255,0)),
-        linear-gradient(135deg, rgba(17, 86, 108, .95), rgba(123, 189, 66, .85));
-      box-shadow: 0 10px 24px rgba(0,0,0,.25);
-      border: 1px solid rgba(255,255,255,.18);
-      flex: 0 0 auto;
+      border: 1px solid rgba(0,0,0,.08);
     }
 
     .brandtext{
@@ -133,51 +131,50 @@ body{
       flex-wrap: wrap;
       justify-content: flex-end;
     }
+
     .pill{
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 10px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(17,86,108,.06);
+      border: 1px solid rgba(17,86,108,.14);
       text-decoration: none;
-      color: var(--text);
+      color: var(--hn-blue-dark);
       font-size: 13px;
       transition: transform .14s ease, background .14s ease, border-color .14s ease;
     }
     .pill:hover{
       transform: translateY(-1px);
-      background: rgba(255,255,255,.07);
-      border-color: rgba(255,255,255,.20);
+      background: rgba(17,86,108,.10);
+      border-color: rgba(17,86,108,.22);
     }
 
     main{ padding: 10px 20px 64px; }
 
+    /* Hero */
     .hero{
       margin-top: 22px;
       padding: 34px 26px;
       border-radius: var(--radius);
-
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      background: #fff;
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      overflow: hidden;
       position: relative;
+      overflow: hidden;
     }
 
-    /* Subtle brand wash instead of neon radial glow */
     .hero:before{
       content:"";
       position:absolute;
       inset:-2px;
       background:
         radial-gradient(520px 260px at 18% 18%, rgba(123,189,66,.10), transparent 60%),
-        radial-gradient(520px 260px at 85% 20%, rgba(17,86,108,.12), transparent 60%);
+        radial-gradient(520px 260px at 85% 20%, rgba(17,86,108,.08), transparent 60%);
       pointer-events:none;
     }
-    .hero > * { position: relative; }
+    .hero > *{ position: relative; }
 
     h1{
       margin: 0 0 10px;
@@ -185,6 +182,7 @@ body{
       letter-spacing: -0.5px;
       line-height: 1.1;
     }
+
     .subtitle{
       margin: 0 0 18px;
       color: var(--muted);
@@ -198,6 +196,7 @@ body{
       flex-wrap: wrap;
       margin-top: 14px;
     }
+
     .btn{
       display: inline-flex;
       align-items: center;
@@ -205,9 +204,9 @@ body{
       gap: 10px;
       padding: 12px 14px;
       border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
+      border: 1px solid rgba(0,0,0,.12);
+      background: rgba(0,0,0,.02);
+      color: var(--hn-blue-dark);
       text-decoration: none;
       font-weight: 600;
       font-size: 14px;
@@ -215,16 +214,20 @@ body{
     }
     .btn:hover{
       transform: translateY(-1px);
-      background: rgba(255,255,255,.09);
-      border-color: rgba(255,255,255,.26);
+      background: rgba(0,0,0,.04);
+      border-color: rgba(0,0,0,.16);
     }
 
-    /* Primary button now uses your green, with accessible contrast */
     .btn.primary{
-      background: linear-gradient(135deg, rgba(123,189,66,.34), rgba(17,86,108,.18));
-      border-color: rgba(255,255,255,.26);
+      background: var(--hn-green);
+      border-color: rgba(0,0,0,.10);
+      color: #0b1a10;
+    }
+    .btn.primary:hover{
+      background: var(--hn-green-2);
     }
 
+    /* Content grid */
     .grid{
       display: grid;
       grid-template-columns: 1.15fr .85fr;
@@ -238,38 +241,22 @@ body{
     }
 
     .card{
-      background: rgba(255,255,255,.05);
+      background: #fff;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 18px 18px;
-      box-shadow: 0 12px 35px rgba(0,0,0,.25);
-      backdrop-filter: blur(10px);
+      padding: 18px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.06);
     }
+
     .card h2{
       margin: 0 0 10px;
       font-size: 16px;
       letter-spacing: .2px;
     }
+
     .card p{
       margin: 0 0 12px;
       color: var(--muted);
-    }
-
-    .tags{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 10px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-    .tag{
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
-      color: rgba(255,255,255,.80);
-      font-size: 12px;
     }
 
     .list{
@@ -279,19 +266,36 @@ body{
     }
     .list li{ margin: 8px 0; }
 
+    .tags{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag{
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(123,189,66,.22);
+      background: rgba(123,189,66,.08);
+      color: var(--hn-blue-dark);
+      font-size: 12px;
+    }
+
     .footer{
       margin-top: 18px;
       color: var(--faint);
       font-size: 12px;
-      display:flex;
+      display: flex;
       justify-content: space-between;
       gap: 12px;
       flex-wrap: wrap;
-      border-top: 1px solid rgba(255,255,255,.12);
+      border-top: 1px solid var(--line);
       padding-top: 14px;
     }
 
-    /* Small accessibility/UX touches */
     @media (prefers-reduced-motion: reduce){
       .pill, .btn { transition: none; }
       .pill:hover, .btn:hover { transform: none; }
@@ -306,13 +310,7 @@ body{
     <div class="wrap">
       <div class="topbar" role="navigation" aria-label="Primary">
         <div class="brand">
-          <img
-            src="/img/tree-icon.png"
-            alt="HolisticNetworking logo"
-            class="logo"
-            width="32"
-            height="40"
-          />
+          <img src="/img/logo-266x200.png" alt="HolisticNetworking logo" class="logo">
           <div class="brandtext">
             <strong>HolisticNetworking.net</strong>
             <span>Professional home for Thomas Belknap</span>
@@ -321,7 +319,7 @@ body{
 
         <nav aria-label="Links">
           <a class="pill" href="https://www.linkedin.com/in/thomasbelknap/" rel="me">LinkedIn</a>
-          <a class="pill" href="https://github.com/holisticnetworking" id="githubLink">GitHub</a>
+          <a class="pill" href="https://github.com/holisticnetworking">GitHub</a>
           <a class="pill" href="mailto:tbelknap@holisticnetworking.net">Email</a>
         </nav>
       </div>
@@ -337,13 +335,13 @@ body{
           higher education, and enterprise teams — with an emphasis on reliability, accessibility, and long-term maintainability.
         </p>
 
-        <div class="cta" aria-label="Primary actions">
+        <div class="cta">
           <a class="btn primary" href="mailto:tbelknap@holisticnetworking.net">Contact</a>
           <a class="btn" href="https://www.linkedin.com/in/thomasbelknap/">View LinkedIn</a>
         </div>
       </section>
 
-      <section class="grid" aria-label="Details">
+      <section class="grid">
         <article class="card">
           <h2>What I do</h2>
           <p>
@@ -359,7 +357,7 @@ body{
             <li>CDC — public health publishing and reliability</li>
           </ul>
 
-          <ul class="tags" aria-label="Core strengths">
+          <ul class="tags">
             <li class="tag">Python / Django</li>
             <li class="tag">PHP (Symfony, CakePHP, Laravel)</li>
             <li class="tag">AWS / Cloud</li>
@@ -388,13 +386,13 @@ body{
             likely via Medium or a lightweight blog.
           </p>
 
-          <div class="cta" style="margin-top: 10px;">
+          <div class="cta" style="margin-top:10px;">
             <a class="btn" href="mailto:tbelknap@holisticnetworking.net">Say hello</a>
           </div>
         </aside>
       </section>
 
-      <footer class="footer" aria-label="Footer">
+      <footer class="footer">
         <span>© <span id="year"></span> Thomas Belknap</span>
         <span>Built for speed, clarity, and accessibility.</span>
       </footer>
@@ -402,12 +400,7 @@ body{
   </main>
 
   <script>
-    // Small enhancements, safe to remove.
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    const githubUrl = "https://github.com/holisticnetworking";
-    const gh = document.getElementById("githubLink");
-    gh.href = githubUrl;
   </script>
 </body>
 </html>
